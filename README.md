@@ -71,3 +71,5 @@ Rotation also animates with configured per-axis speeds in [src/main.cpp](src/mai
 - Window is resizable; resizes update the projection viewport.
 - Event handling occurs once in the main loop; rendering callback is pure draw.
 - Projection guards extremely small denominators to avoid infinities near the camera.
+- To stop the 3d objects from rotating, just set the rotation speed for all axis to 0.
+- To adjust the starting angle of the objects, change the angle X, Y and Z in main.
