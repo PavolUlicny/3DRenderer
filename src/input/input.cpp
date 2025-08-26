@@ -47,12 +47,6 @@ bool handleEvent(RenderState *state, const SDL_Event &event)
         case SDLK_p:
             g_objects3d.makePyramid(*state, 1, 0, 0, 255);
             return true;
-        case SDLK_LEFT:
-            state->angleY -= 0.1f;
-            return true;
-        case SDLK_RIGHT:
-            state->angleY += 0.1f;
-            return true;
         default:
             break;
         }
