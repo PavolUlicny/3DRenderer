@@ -62,7 +62,6 @@ mkdir -p output && g++ -std=c++17 -Wall -Wextra -g \
 - Esc: Quit
 - c or 1: Spawn cube
 - p or 2: Spawn pyramid
-- Left/Right: Adjust Y rotation angle step
 
 Rotation also animates with configured per-axis speeds in [src/main.cpp](src/main.cpp).
 
