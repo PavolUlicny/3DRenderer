@@ -35,15 +35,11 @@ bool handleEvent(RenderState *state, const SDL_Event &event)
             return true;
         case SDLK_1:    // top-row '1'
         case SDLK_KP_1: // keypad '1'
+        case SDLK_c:
             g_objects3d.makeCube(*state, 1, 255, 0, 0);
             return true;
         case SDLK_2:    // top-row '2'
         case SDLK_KP_2: // keypad '2'
-            g_objects3d.makePyramid(*state, 1, 0, 0, 255);
-            return true;
-        case SDLK_c:
-            g_objects3d.makeCube(*state, 1, 255, 0, 0);
-            return true;
         case SDLK_p:
             g_objects3d.makePyramid(*state, 1, 0, 0, 255);
             return true;
