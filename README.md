@@ -7,19 +7,17 @@ SDL2-based wireframe demo that rotates and projects simple 3D primitives (cube, 
 - [Makefile](Makefile)
 - [README.md](README.md)
 - [.gitignore](.gitignore)
-- output/
-  - [output/main](output/main)
-- src/
+- [src/](src/)
   - [src/main.cpp](src/main.cpp)
-  - 2d_renderer/
+  - [2d_renderer/](src/2d_renderer/)
     - [src/2d_renderer/2d_renderer.h](src/2d_renderer/2d_renderer.h)
     - [src/2d_renderer/2d_renderer.cpp](src/2d_renderer/2d_renderer.cpp)
-  - 3d_renderer/
+  - [3d_renderer/](src/3d_renderer/)
     - [src/3d_renderer/3d_renderer.h](src/3d_renderer/3d_renderer.h)
     - [src/3d_renderer/3d_renderer.cpp](src/3d_renderer/3d_renderer.cpp)
-  - app_state/
+  - [app_state/](src/app_state/)
     - [src/app_state/app_state.h](src/app_state/app_state.h)
-  - input/
+  - [input/](src/input/)
     - [src/input/input.h](src/input/input.h)
     - [src/input/input.cpp](src/input/input.cpp)
 
@@ -34,7 +32,6 @@ SDL2-based wireframe demo that rotates and projects simple 3D primitives (cube, 
 - Shared app state and types: [src/app_state/app_state.h](src/app_state/app_state.h) — `Point3d`, `Point2d`, `Edge3d`, and `RenderState` (geometry, projection, rotation, timing, lifecycle).
 - Input mapping API: [src/input/input.h](src/input/input.h) — `handleEvent` declaration.
 - Input mapping impl: [src/input/input.cpp](src/input/input.cpp) — translates SDL events to state changes (quit, resize, spawn cube/pyramid, adjust angle).
-- Built binary (generated): [output/main](output/main) — produced by `make`; not committed typically.
 
 ## Build
 
