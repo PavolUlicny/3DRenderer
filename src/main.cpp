@@ -24,6 +24,11 @@ int main()
     state.rotateSpeedY = -25;
     state.rotateSpeedZ = 10;
 
+    // Starting angles
+    state.angleX = 20;
+    state.angleY = 30;
+    state.angleZ = 40;
+
     objects3d.makeCube(state, 1.0f, 255, 0, 0);
 
     // Enter the render loop; returns 0 on normal shutdown
