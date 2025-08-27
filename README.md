@@ -4,7 +4,9 @@ SDL2-based wireframe demo that rotates and projects simple 3D primitives (cube, 
 
 ## Demo
 
-![cube](screenshots/cube.png)
+| ![Cube demo](screenshots/cube.png) |
+|:--:|
+| Cube demo |
 
 ## Project structure
 
