@@ -13,6 +13,7 @@ SDL2-based wireframe demo that rotates and projects simple 3D primitives (cube, 
 - [Makefile](Makefile)
 - [README.md](README.md)
 - [.gitignore](.gitignore)
+- [LICENSE](LICENSE)
 - [screenshots/](screenshots/)
   - [cube.png](screenshots/cube.png)
   - [pyramid.png](screenshots/pyramid.png)
