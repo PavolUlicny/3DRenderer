@@ -31,14 +31,14 @@ SDL2-based wireframe demo that rotates and projects simple 3D primitives (cube, 
 ## Files and responsibilities
 
 - Build system: [Makefile](Makefile) — targets for debug (`all`), run, release, and AddressSanitizer.
-- Entry point: [src/main.cpp](src/main.cpp) — initializes `RenderState`, picks a primitive, starts the render loop.
-- SDL render loop API: [src/2d_renderer/2d_renderer.h](src/2d_renderer/2d_renderer.h) — `renderer_run` declaration and frame-callback type.
-- SDL render loop impl: [src/2d_renderer/2d_renderer.cpp](src/2d_renderer/2d_renderer.cpp) — creates the resizable window and VSync renderer, polls events, clears/presents, and invokes the per-frame callback.
-- 3D helpers and callback API: [src/3d_renderer/3d_renderer.h](src/3d_renderer/3d_renderer.h) — rotation/project utilities, primitive builders, and the `frame_callback` signature.
-- 3D helpers and callback impl: [src/3d_renderer/3d_renderer.cpp](src/3d_renderer/3d_renderer.cpp) — rotation around X/Y/Z, perspective projection, cube/pyramid generators, and the per-frame render callback.
-- Shared app state and types: [src/app_state/app_state.h](src/app_state/app_state.h) — `Point3d`, `Point2d`, `Edge3d`, and `RenderState` (geometry, projection, rotation, timing, lifecycle).
-- Input mapping API: [src/input/input.h](src/input/input.h) — `handleEvent` declaration.
-- Input mapping impl: [src/input/input.cpp](src/input/input.cpp) — translates SDL events to state changes (quit, resize, spawn cube/pyramid, adjust angle).
+- Entry point: [main.cpp](src/main.cpp) — initializes `RenderState`, picks a primitive, starts the render loop.
+- SDL render loop API: [2d_renderer.h](src/2d_renderer/2d_renderer.h) — `renderer_run` declaration and frame-callback type.
+- SDL render loop impl: [2d_renderer.cpp](src/2d_renderer/2d_renderer.cpp) — creates the resizable window and VSync renderer, polls events, clears/presents, and invokes the per-frame callback.
+- 3D helpers and callback API: [3d_renderer.h](src/3d_renderer/3d_renderer.h) — rotation/project utilities, primitive builders, and the `frame_callback` signature.
+- 3D helpers and callback impl: [3d_renderer.cpp](src/3d_renderer/3d_renderer.cpp) — rotation around X/Y/Z, perspective projection, cube/pyramid generators, and the per-frame render callback.
+- Shared app state and types: [app_state.h](src/app_state/app_state.h) — `Point3d`, `Point2d`, `Edge3d`, and `RenderState` (geometry, projection, rotation, timing, lifecycle).
+- Input mapping API: [input.h](src/input/input.h) — `handleEvent` declaration.
+- Input mapping impl: [input.cpp](src/input/input.cpp) — translates SDL events to state changes (quit, resize, spawn cube/pyramid, adjust angle).
 
 ## Build
 
@@ -70,7 +70,7 @@ mkdir -p output && g++ -std=c++17 -Wall -Wextra -g \
 - c or 1: Spawn cube
 - p or 2: Spawn pyramid
 
-Rotation also animates with configured per-axis speeds in [src/main.cpp](src/main.cpp).
+Rotation also animates with configured per-axis speeds in [main.cpp](src/main.cpp).
 
 ## Notes
 
