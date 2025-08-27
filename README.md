@@ -2,7 +2,6 @@
 
 SDL2-based wireframe demo that rotates and projects simple 3D primitives (cube, pyramid) to 2D. The window is resizable and input is mapped to simple state changes.
 ![cube](screenshots/cube.png)
-![pyramid](screenshots/pyramid.png)
 
 ## Project structure
 
