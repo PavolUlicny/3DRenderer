@@ -1,4 +1,3 @@
-//
 // 2d_renderer.cpp
 // Implements a small SDL2-driven render loop that owns the window and renderer.
 // The loop delegates input processing to handleEvent() and rendering to a
@@ -59,6 +58,14 @@ int renderer_run(const char *title, int width, int height, RendererFrameCallback
 
     // The application-specific state is carried through userData
     RenderState *state = static_cast<RenderState *>(userData);
+    if (!state)
+    {
+        SDL_Log("renderer_run: userData (RenderState*) is null");
+        SDL_DestroyRenderer(renderer);
+        SDL_DestroyWindow(window);
+        SDL_Quit();
+        return 1;
+    }
 
     // Main loop
     while (state->running)

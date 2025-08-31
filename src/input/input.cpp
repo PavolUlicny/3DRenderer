@@ -3,7 +3,7 @@
 #include <SDL2/SDL.h>
 #include "input.h"
 #include "../app_state/app_state.h"
-#include "../3d_renderer/3d_renderer.h"
+#include "../3d_objects/objects_3d.h"
 
 // A single global helper is sufficient to construct primitives on demand.
 static Objects3d g_objects3d;

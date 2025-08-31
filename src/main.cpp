@@ -2,7 +2,9 @@
 // Demo entry point: initializes RenderState, selects a primitive, and launches
 // the SDL-driven render loop.
 #include "3d_renderer/3d_renderer.h"
+#include "2d_renderer/2d_renderer.h" // renderer_run declaration
 #include "app_state/app_state.h"
+#include "3d_objects/objects_3d.h"
 
 /**
  * @brief Program entry: configures the scene and starts the renderer.

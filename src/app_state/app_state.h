@@ -50,7 +50,7 @@ struct RenderState
     int screenWidth = 800;
     int screenHeight = 600;
 
-    // Rotation speeds (degrees per second)
+    // Rotation speeds (degrees per second). If all are 0, the object will not rotate.
     float rotateSpeedX = 0.0f;
     float rotateSpeedY = 0.0f;
     float rotateSpeedZ = 0.0f;

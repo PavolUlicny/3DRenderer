@@ -7,7 +7,6 @@
 
 #include <SDL2/SDL.h>
 #include "../3d_renderer/3d_renderer.h"
-#include "../input/input.h"
 #include <algorithm>
 #include <vector>
 #include <cmath>
@@ -60,70 +59,6 @@ Point3d Renderer3d::rotateZ(const Point3d &point3d, float angleDegrees)
     float x = point3d.x * cos(angleRad) - point3d.y * sin(angleRad);
     float y = point3d.x * sin(angleRad) + point3d.y * cos(angleRad);
     return {x, y, point3d.z, point3d.red, point3d.green, point3d.blue};
-}
-
-// Objects3d implementations
-// -------------------------
-/** Populate state with a unit cube scaled by 'size' and colored edges. */
-void Objects3d::makeCube(RenderState &state, float size, int red, int green, int blue)
-{
-    state.basePoints3d.clear();
-    state.edges3d.clear();
-
-    std::vector<Point3d> points3d = {
-        {-size, -size, -size, red, green, blue},
-        {size, -size, -size, red, green, blue},
-        {size, size, -size, red, green, blue},
-        {-size, size, -size, red, green, blue},
-        {-size, -size, size, red, green, blue},
-        {size, -size, size, red, green, blue},
-        {size, size, size, red, green, blue},
-        {-size, size, size, red, green, blue}};
-
-    std::vector<Edge3d> edges3d = {
-        {0, 1, red, green, blue},
-        {1, 2, red, green, blue},
-        {2, 3, red, green, blue},
-        {3, 0, red, green, blue},
-        {4, 5, red, green, blue},
-        {5, 6, red, green, blue},
-        {6, 7, red, green, blue},
-        {7, 4, red, green, blue},
-        {0, 4, red, green, blue},
-        {1, 5, red, green, blue},
-        {2, 6, red, green, blue},
-        {3, 7, red, green, blue}};
-
-    state.basePoints3d = std::move(points3d);
-    state.edges3d = std::move(edges3d);
-}
-
-/** Populate state with a square-based pyramid scaled by 'size'. */
-void Objects3d::makePyramid(RenderState &state, float size, int red, int green, int blue)
-{
-    state.basePoints3d.clear();
-    state.edges3d.clear();
-
-    std::vector<Point3d> points3d = {
-        {-size, -size, -size, red, green, blue},
-        {size, -size, -size, red, green, blue},
-        {size, size, -size, red, green, blue},
-        {-size, size, -size, red, green, blue},
-        {0.0f, 0.0f, size, red, green, blue},
-    };
-
-    std::vector<Edge3d> edges3d = {
-        {0, 1, red, green, blue},
-        {1, 2, red, green, blue},
-        {2, 3, red, green, blue},
-        {3, 0, red, green, blue},
-        {0, 4, red, green, blue},
-        {1, 4, red, green, blue},
-        {2, 4, red, green, blue},
-        {3, 4, red, green, blue}};
-
-    state.basePoints3d = std::move(points3d);
-    state.edges3d = std::move(edges3d);
 }
 
 // Frame callback

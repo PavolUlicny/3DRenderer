@@ -14,9 +14,8 @@
  *  - SDL_WINDOWEVENT_RESIZED / SIZE_CHANGED: update screenWidth/Height
  *  - SDL_KEYDOWN:
  *      Esc: quit
- *      C:   create cube primitive
- *      P:   create pyramid primitive
- *      Left/Right: tweak Y rotation angle
+ *      C / 1:   create cube primitive
+ *      P / 2:   create pyramid primitive
  *
  * @param state Mutable application state
  * @param event SDL event to handle
