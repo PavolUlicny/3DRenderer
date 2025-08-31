@@ -1,3 +1,19 @@
-src/output/
+# IDE/editor
 .vscode/
+*.code-workspace
+
+# Build outputs
 output/
+*.o
+*.obj
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.swp
+*.swo
+*~
+.cache/
