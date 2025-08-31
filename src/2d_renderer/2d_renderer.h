@@ -1,6 +1,6 @@
 /**
  * @file 2d_renderer.h
- * @brief Minimal SDL2 rendering loop Abstraction.
+ * @brief Minimal SDL2 rendering loop abstraction.
  *
  * Exposes a single entry point that owns the SDL window and renderer and
  * invokes a user-supplied frame callback every iteration of the loop.
