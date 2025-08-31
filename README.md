@@ -25,6 +25,9 @@ SDL2-based wireframe demo that rotates and projects simple 3D primitives (cube, 
   - [3d_renderer/](src/3d_renderer/)
     - [3d_renderer.h](src/3d_renderer/3d_renderer.h)
     - [3d_renderer.cpp](src/3d_renderer/3d_renderer.cpp)
+  - [3d_objects/](src/3d_objects/)
+    - [objects_3d.h](src/3d_objects/objects_3d.h)
+    - [objects_3d.cpp](src/3d_objects/objects_3d.cpp)
   - [app_state/](src/app_state/)
     - [app_state.h](src/app_state/app_state.h)
   - [input/](src/input/)
@@ -37,11 +40,13 @@ SDL2-based wireframe demo that rotates and projects simple 3D primitives (cube, 
 - Entry point: [main.cpp](src/main.cpp) — initializes `RenderState`, picks a primitive, starts the render loop.
 - SDL render loop API: [2d_renderer.h](src/2d_renderer/2d_renderer.h) — `renderer_run` declaration and frame-callback type.
 - SDL render loop impl: [2d_renderer.cpp](src/2d_renderer/2d_renderer.cpp) — creates the resizable window and VSync renderer, polls events, clears/presents, and invokes the per-frame callback.
-- 3D helpers and callback API: [3d_renderer.h](src/3d_renderer/3d_renderer.h) — rotation/project utilities, primitive builders, and the `frame_callback` signature.
-- 3D helpers and callback impl: [3d_renderer.cpp](src/3d_renderer/3d_renderer.cpp) — rotation around X/Y/Z, perspective projection, cube/pyramid generators, and the per-frame render callback.
+- 3D math + callback API: [3d_renderer.h](src/3d_renderer/3d_renderer.h) — rotation/project utilities and the `frame_callback` signature.
+- 3D math + callback impl: [3d_renderer.cpp](src/3d_renderer/3d_renderer.cpp) — rotation around X/Y/Z, perspective projection, and the per-frame render callback.
+- 3D objects API: [objects_3d.h](src/3d_objects/objects_3d.h) — primitive builders (cube, pyramid).
+- 3D objects impl: [objects_3d.cpp](src/3d_objects/objects_3d.cpp) — implementations populating `RenderState`.
 - Shared app state and types: [app_state.h](src/app_state/app_state.h) — `Point3d`, `Point2d`, `Edge3d`, and `RenderState` (geometry, projection, rotation, timing, lifecycle).
 - Input mapping API: [input.h](src/input/input.h) — `handleEvent` declaration.
-- Input mapping impl: [input.cpp](src/input/input.cpp) — translates SDL events to state changes (quit, resize, spawn cube/pyramid, adjust angle).
+- Input mapping impl: [input.cpp](src/input/input.cpp) — translates SDL events to state changes (quit, resize, spawn cube/pyramid).
 
 ## Build
 
@@ -80,5 +85,5 @@ Rotation also animates with configured per-axis speeds in [main.cpp](src/main.cp
 - Window is resizable; resizes update the projection viewport.
 - Event handling occurs once in the main loop; rendering callback is pure draw.
 - Projection guards extremely small denominators to avoid infinities near the camera.
-- To stop the 3d objects from rotating, just set the rotation speed for all axis to 0.
+- To stop the 3d objects from rotating, set the rotation speed for all axis to 0.
 - To adjust the starting angle of the objects, change the angle X, Y and Z in [main.cpp](src/main.cpp).
