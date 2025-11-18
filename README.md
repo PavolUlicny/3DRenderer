@@ -52,6 +52,13 @@ SDL2-based wireframe demo that rotates and projects simple 3D primitives (cube, 
 
 Prereqs: SDL2 development headers installed and `pkg-config` available.
 
+- You can install the SDL2 development headers on Linux with:
+
+```bash
+sudo apt update
+sudo apt install libsdl2-dev
+```
+
 - Linux (bash) using [Makefile](Makefile):
 
 ```bash
